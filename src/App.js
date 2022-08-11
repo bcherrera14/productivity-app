@@ -1,8 +1,11 @@
-import Button from 'react-bootstrap/Button';
-import Dropdown from 'react-bootstrap/Dropdown';
+import Header from './components/Header';
 
 function App() {
-	return <h1>Productivity App </h1>;
+	return (
+		<div>
+			<Header />
+		</div>
+	);
 }
 
 export default App;
