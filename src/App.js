@@ -5,7 +5,7 @@ function App() {
 	return (
 		<div>
 			<Header />
-			<div className="container">
+			<div className="container d-flex justify-content-center">
 				<ProductivityForm />
 			</div>
 		</div>
