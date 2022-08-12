@@ -48,6 +48,10 @@ label.btn {
 	color: #fff;
 }
 
+.btn-send {
+	background-color: #e9ecef;
+}
+
 .time-select {
 	width: 11rem;
 	text-align: center;
