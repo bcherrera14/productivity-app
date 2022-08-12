@@ -19,11 +19,31 @@ function ProductivityForm() {
 	const handleHourChange = (e) => {
 		console.log(+e.target.value);
 		setHours(+e.target.value);
+
+		if (
+			text.trim().length >= 10 &&
+			document.getElementById('hourSelect').value !== 'default' &&
+			document.getElementById('minuteSelect').value !== 'default'
+		) {
+			setBtnDisabled(false);
+		} else {
+			setBtnDisabled(true);
+		}
 	};
 
 	const handleMinuteChange = (e) => {
 		console.log(+e.target.value);
 		setMinutes(+e.target.value);
+
+		if (
+			text.trim().length >= 10 &&
+			document.getElementById('hourSelect').value !== 'default' &&
+			document.getElementById('minuteSelect').value !== 'default'
+		) {
+			setBtnDisabled(false);
+		} else {
+			setBtnDisabled(true);
+		}
 	};
 
 	const handleTextChange = (e) => {
@@ -31,7 +51,11 @@ function ProductivityForm() {
 
 		if (text === '' || text.trim().length < 10) {
 			setBtnDisabled(true);
-		} else if (text.trim().length >= 10) {
+		} else if (
+			text.trim().length >= 10 &&
+			document.getElementById('hourSelect').value !== 'default' &&
+			document.getElementById('minuteSelect').value !== 'default'
+		) {
 			setBtnDisabled(false);
 		}
 		setText(text);
