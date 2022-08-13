@@ -85,10 +85,10 @@ function ProductivityForm() {
 	};
 
 	return (
-		<Card body className="w-75">
+		<Card body className="w-100">
 			<Form onSubmit={handleSubmit}>
 				<RatingSelect selected={rating} select={setRating} />
-				<h2 className="text-center mb-4">How much sleep did you get?</h2>
+				<h4 className="text-center mb-4">How much sleep did you get?</h4>
 				<Row className="justify-content-center mb-4">
 					<Form.Group className="time-select">
 						<InputGroup className="mb-3">
@@ -96,7 +96,7 @@ function ProductivityForm() {
 							<Form.Select
 								id="hourSelect"
 								aria-label="Small"
-								size="lg"
+								size="sm"
 								type="text"
 								onChange={handleHourChange}
 								autoComplete="off"
@@ -118,7 +118,7 @@ function ProductivityForm() {
 					<Form.Group className="time-select">
 						<InputGroup className="mb-3">
 							<InputGroup.Text id="basic-addon2">MINS</InputGroup.Text>
-							<Form.Select id="minuteSelect" size="lg" type="text" onChange={handleMinuteChange}>
+							<Form.Select id="minuteSelect" size="sm" type="text" onChange={handleMinuteChange}>
 								<option value="default" />
 								<option>0</option>
 								<option>15</option>
@@ -129,11 +129,11 @@ function ProductivityForm() {
 					</Form.Group>
 				</Row>
 
-				<h2 className="text-center mb-4">What is your number one priority for today?</h2>
+				<h4 className="text-center mb-4">What is your number one priority for today?</h4>
 				<Row className="justify-content-center mb-4">
-					<Col lg={10} className="p-0">
+					<Col lg={8} className="p-0">
 						<Form.Control
-							size="lg"
+							size="sm"
 							placeholder="My number one priority is..."
 							aria-label="Recipient's username"
 							aria-describedby="basic-addon2"
@@ -146,8 +146,8 @@ function ProductivityForm() {
 					<Button
 						type="submit"
 						variant="light"
-						size="lg"
-						className="col-lg-10 btn-send"
+						size="sm"
+						className="col-lg-8 btn-send"
 						disabled={btnDisabled}
 					>
 						Send

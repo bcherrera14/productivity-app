@@ -8,7 +8,7 @@ function RatingSelect({ selected, select }) {
 
 	return (
 		<div className="d-flex flex-column align-items-center mt-4 mb-4">
-			<h2 className="text-center mb-4">What would your rate your productivity for today?</h2>
+			<h4 className="text-center mb-4">What would your rate your productivity for today?</h4>
 			<div className="row justify-content-center w-100">
 				<input
 					type="radio"
