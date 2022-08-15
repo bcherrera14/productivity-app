@@ -61,3 +61,8 @@ label.btn {
 	width: 11rem;
 	text-align: center;
 }
+
+.stats-header {
+	color: #fff;
+	font-weight: 700;
+}

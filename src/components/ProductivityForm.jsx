@@ -9,7 +9,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 import RatingSelect from './RatingSelect';
 
-function ProductivityForm() {
+function ProductivityForm({ addPriority }) {
 	const [ rating, setRating ] = useState(10);
 	const [ hours, setHours ] = useState('');
 	const [ minutes, setMinutes ] = useState('');
@@ -72,7 +72,8 @@ function ProductivityForm() {
 				rating
 			};
 
-			console.log(newPriorityLog);
+			// console.log(newPriorityLog);
+			addPriority(newPriorityLog);
 
 			setBtnDisabled(true);
 			setText('');
