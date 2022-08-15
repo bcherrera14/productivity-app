@@ -73,8 +73,19 @@ label.btn {
 
 .daily-stat {
 	background-color: #7fccc4;
-	border-top-left-radius: 20px;
-	border-bottom-left-radius: 20px;
+	border-top-left-radius: 17px;
+	border-bottom-left-radius: 17px;
 	padding: 0.8rem;
 	color: #fff;
+	min-width: 80px;
+	font-weight: 600;
+}
+
+.card-btns {
+	min-width: 1.2rem;
+	margin-right: 2.3rem;
+}
+
+.card-btns > img {
+	cursor: pointer;
 }

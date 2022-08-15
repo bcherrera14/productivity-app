@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { v4 as uuidv4 } from 'uuid';
 
 import RatingSelect from './RatingSelect';
 
@@ -63,13 +64,15 @@ function ProductivityForm({ addPriority }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		let id = uuidv4();
 
 		if (text.trim().length > 10) {
 			const newPriorityLog = {
 				text,
 				hours,
 				minutes,
-				rating
+				rating,
+				id
 			};
 
 			// console.log(newPriorityLog);

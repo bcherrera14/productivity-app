@@ -9,7 +9,7 @@ function App() {
 	const [ logs, setLogs ] = useState([]);
 
 	const addPriority = (item) => {
-		setLogs([ ...logs, item ]);
+		setLogs([ item, ...logs ]);
 	};
 
 	useEffect(
@@ -25,7 +25,7 @@ function App() {
 			<div className="container d-flex flex-column align-items-center">
 				<ProductivityForm addPriority={addPriority} />
 				<Stats logs={logs} />
-				<LogList />
+				<LogList logList={logs} />
 			</div>
 		</div>
 	);

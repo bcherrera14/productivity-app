@@ -2,7 +2,7 @@ import React from 'react';
 import { NavItem } from 'react-bootstrap';
 import LogCard from './LogCard';
 
-function LogList() {
+function LogList({ logList }) {
 	const data = [
 		{
 			rating: 8,
@@ -27,7 +27,11 @@ function LogList() {
 		}
 	];
 
-	return <div className="w-100">{data.map((item) => <LogCard key={item.id} item={item} />)}</div>;
+	if (logList.length > 0) {
+		return <div className="w-100">{logList.map((item) => <LogCard key={item.id} item={item} />)}</div>;
+	}
+
+	return <div className="w-100 text-white">There are no entries.</div>;
 }
 
 export default LogList;
