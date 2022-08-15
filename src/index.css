@@ -66,3 +66,15 @@ label.btn {
 	color: #fff;
 	font-weight: 700;
 }
+
+.log-card {
+	padding: 3px;
+}
+
+.daily-stat {
+	background-color: #7fccc4;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding: 0.8rem;
+	color: #fff;
+}

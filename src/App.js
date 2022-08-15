@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import ProductivityForm from './components/ProductivityForm';
 import Stats from './components/Stats';
+import LogCard from './components/LogCard';
 
 function App() {
 	const [ logs, setLogs ] = useState([]);
@@ -23,6 +24,7 @@ function App() {
 			<div className="container d-flex flex-column align-items-center">
 				<ProductivityForm addPriority={addPriority} />
 				<Stats logs={logs} />
+				<LogCard />
 			</div>
 		</div>
 	);
