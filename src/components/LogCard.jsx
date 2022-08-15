@@ -2,6 +2,7 @@ import React from 'react';
 import { FaCircle, FaBed } from 'react-icons/fa';
 import Card from 'react-bootstrap/Card';
 import Brain from './assets/brain-regular-white.svg';
+import Bed from './assets/bed-solid.svg';
 import EditBtn from './assets/pen-circle.svg';
 import DeleteBtn from './assets/circle-xmark.svg';
 
@@ -17,7 +18,7 @@ function LogCard({ item }) {
 						<img src={Brain} alt="head" /> : {item.rating}
 					</p>
 					<p className="m-0">
-						<FaBed /> : {sleepTime}
+						<img src={Bed} alt="head" /> : {sleepTime}
 					</p>
 				</div>
 				<div className="ms-4">{item.text}</div>
