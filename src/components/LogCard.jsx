@@ -23,7 +23,7 @@ function LogCard({ item, deletePriority, editPriority }) {
 				</div>
 				<div className="ms-4">{item.text}</div>
 				<div className="ms-auto me-3 align-self-start text-secondary">
-					<p className="m-0">{item.date}</p>
+					<p className="m-0 d-none d-lg-block">{item.date}</p>
 				</div>
 				<div className="card-btns align-self-start text-nowrap">
 					<img src={EditBtn} alt="edit" onClick={() => editPriority(item)} />

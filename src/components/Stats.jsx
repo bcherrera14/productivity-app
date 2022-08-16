@@ -1,4 +1,6 @@
 import React from 'react';
+import Brain from './assets/brain-regular-white.svg';
+import Bed from './assets/bed-solid.svg';
 
 function Stats({ logs }) {
 	let averageRating =
@@ -20,8 +22,20 @@ function Stats({ logs }) {
 
 	return (
 		<div className="d-flex justify-content-between stats-header w-100 mt-3">
-			<p>Average Productivity : {isNaN(averageRating) ? 0 : averageRating}</p>
-			<p>Averge Hours of Sleep : {isNaN(averageSleep) ? 0 : averageSleep}</p>
+			<p className="d-flex">
+				<span className="d-none d-lg-block">Average Productivity</span>
+				<span className="d-lg-none">
+					<img src={Brain} alt="head" width={22} />
+				</span>
+				<span className="ps-1">: {isNaN(averageRating) ? 0 : averageRating}</span>
+			</p>
+			<p className="d-flex">
+				<span className="d-none d-lg-block">Averge Hours of Sleep</span>
+				<span className="d-lg-none">
+					<img src={Bed} alt="bed" width={22} />
+				</span>
+				<span className="ps-1">: {isNaN(averageSleep) ? 0 : averageSleep}</span>
+			</p>
 		</div>
 	);
 }

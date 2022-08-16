@@ -101,7 +101,6 @@ function ProductivityForm({ addPriority, edit, updatePriority }) {
 					date
 				};
 
-				// console.log(newPriorityLog);
 				addPriority(newPriorityLog);
 			}
 
