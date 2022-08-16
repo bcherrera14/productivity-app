@@ -159,7 +159,7 @@ function ProductivityForm({ addPriority, edit, updatePriority }) {
 					</Form.Group>
 				</Row>
 
-				<h4 className="text-center mb-4">What is your number one priority for today?</h4>
+				<h4 className="text-center mb-4">What was your number one priority for today?</h4>
 				<Row className="justify-content-center mb-4">
 					<Col lg={8} className="p-0">
 						<Form.Control
