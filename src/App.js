@@ -7,6 +7,10 @@ import LogList from './components/LogList';
 
 function App() {
 	const [ logs, setLogs ] = useState([]);
+	const [ editLog, setEditLog ] = useState({
+		item: {},
+		edit: false
+	});
 
 	const addPriority = (item) => {
 		setLogs([ item, ...logs ]);
@@ -17,6 +21,25 @@ function App() {
 		const result = logs.filter((item) => item.id !== id);
 		setLogs(result);
 		localStorage.setItem('logData', JSON.stringify(result));
+	};
+
+	const editPriority = (item) => {
+		// console.log('Edit', item);
+		setEditLog({
+			item,
+			edit: true
+		});
+	};
+
+	const updatePriority = (id, item) => {
+		const updatedLogs = logs.map((log) => (log.id === id ? { ...log, ...item } : log));
+		console.log(updatedLogs);
+		setLogs(updatedLogs);
+		localStorage.setItem('logData', JSON.stringify(updatedLogs));
+		setEditLog({
+			item: {},
+			edit: false
+		});
 	};
 
 	useEffect(() => {
@@ -30,9 +53,9 @@ function App() {
 		<div>
 			<Header />
 			<div className="container d-flex flex-column align-items-center">
-				<ProductivityForm addPriority={addPriority} />
+				<ProductivityForm addPriority={addPriority} edit={editLog} updatePriority={updatePriority} />
 				<Stats logs={logs} />
-				<LogList logList={logs} deletePriority={deletePriority} />
+				<LogList logList={logs} deletePriority={deletePriority} editPriority={editPriority} />
 			</div>
 		</div>
 	);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,12 +10,27 @@ import { v4 as uuidv4 } from 'uuid';
 
 import RatingSelect from './RatingSelect';
 
-function ProductivityForm({ addPriority }) {
+function ProductivityForm({ addPriority, edit, updatePriority }) {
 	const [ rating, setRating ] = useState(10);
 	const [ hours, setHours ] = useState('');
 	const [ minutes, setMinutes ] = useState('');
 	const [ btnDisabled, setBtnDisabled ] = useState(true);
 	const [ text, setText ] = useState('');
+
+	useEffect(
+		() => {
+			if (edit.edit === true) {
+				setRating(edit.item.rating);
+				setText(edit.item.text);
+				setBtnDisabled(false);
+				setHours(edit.item.hours);
+				document.getElementById('hourSelect').value = edit.item.hours;
+				setMinutes(edit.item.minutes);
+				document.getElementById('minuteSelect').value = edit.item.minutes;
+			}
+		},
+		[ edit ]
+	);
 
 	const handleHourChange = (e) => {
 		console.log(+e.target.value);
@@ -68,17 +83,27 @@ function ProductivityForm({ addPriority }) {
 		let date = new Date().toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' });
 
 		if (text.trim().length > 10) {
-			const newPriorityLog = {
-				text,
-				hours,
-				minutes,
-				rating,
-				id,
-				date
-			};
+			if (edit.edit === true) {
+				const updatedPriority = {
+					text,
+					hours,
+					minutes,
+					rating
+				};
+				updatePriority(edit.item.id, updatedPriority);
+			} else {
+				const newPriorityLog = {
+					text,
+					hours,
+					minutes,
+					rating,
+					id,
+					date
+				};
 
-			// console.log(newPriorityLog);
-			addPriority(newPriorityLog);
+				// console.log(newPriorityLog);
+				addPriority(newPriorityLog);
+			}
 
 			setBtnDisabled(true);
 			setText('');
@@ -108,15 +133,15 @@ function ProductivityForm({ addPriority }) {
 								autoComplete="off"
 							>
 								<option value="default" />
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-								<option>9</option>
-								<option>10</option>
-								<option>11</option>
-								<option>12</option>
+								<option value={4}>4</option>
+								<option value={5}>5</option>
+								<option value={6}>6</option>
+								<option value={7}>7</option>
+								<option value={8}>8</option>
+								<option value={9}>9</option>
+								<option value={10}>10</option>
+								<option value={11}>11</option>
+								<option value={12}>12</option>
 							</Form.Select>
 						</InputGroup>
 					</Form.Group>
@@ -126,10 +151,10 @@ function ProductivityForm({ addPriority }) {
 							<InputGroup.Text id="basic-addon2">MINS</InputGroup.Text>
 							<Form.Select id="minuteSelect" size="sm" type="text" onChange={handleMinuteChange}>
 								<option value="default" />
-								<option>0</option>
-								<option>15</option>
-								<option>30</option>
-								<option>45</option>
+								<option value={0}>0</option>
+								<option value={15}>15</option>
+								<option value={30}>30</option>
+								<option value={45}>45</option>
 							</Form.Select>
 						</InputGroup>
 					</Form.Group>

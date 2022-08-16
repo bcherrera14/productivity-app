@@ -2,11 +2,13 @@ import React from 'react';
 import { NavItem } from 'react-bootstrap';
 import LogCard from './LogCard';
 
-function LogList({ logList, deletePriority }) {
+function LogList({ logList, deletePriority, editPriority }) {
 	if (logList.length > 0) {
 		return (
 			<div className="w-100">
-				{logList.map((item) => <LogCard key={item.id} item={item} deletePriority={deletePriority} />)}
+				{logList.map((item) => (
+					<LogCard key={item.id} item={item} deletePriority={deletePriority} editPriority={editPriority} />
+				))}
 			</div>
 		);
 	}
