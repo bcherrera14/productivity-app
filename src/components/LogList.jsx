@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavItem } from 'react-bootstrap';
 import LogCard from './LogCard';
 
 function LogList({ logList, deletePriority, editPriority }) {

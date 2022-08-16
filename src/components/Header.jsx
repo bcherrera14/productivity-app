@@ -5,8 +5,7 @@ function Header() {
 	return (
 		<header>
 			<div className="container d-flex justify-content-center align-items-center">
-				<img className="brain-icon me-3" src={Brain} alt="image" />{' '}
-				<h3 className="m-0">Productivity Tracker</h3>
+				<img className="brain-icon me-3" src={Brain} alt="logo" /> <h3 className="m-0">Productivity Tracker</h3>
 			</div>
 		</header>
 	);

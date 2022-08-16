@@ -1,6 +1,4 @@
 import React from 'react';
-import { FaCircle, FaBed } from 'react-icons/fa';
-import Card from 'react-bootstrap/Card';
 import Brain from './assets/brain-regular-white.svg';
 import Bed from './assets/bed-solid.svg';
 import EditBtn from './assets/pen-circle.svg';

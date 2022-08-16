@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 
 function RatingSelect({ selected, select }) {
 	const handleChange = (e) => {
