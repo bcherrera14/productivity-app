@@ -22,7 +22,10 @@ function LogCard({ item }) {
 					</p>
 				</div>
 				<div className="ms-4">{item.text}</div>
-				<div className="card-btns ms-auto align-self-start text-nowrap">
+				<div className="ms-auto me-3 align-self-start text-secondary">
+					<p className="m-0">{item.date}</p>
+				</div>
+				<div className="card-btns align-self-start text-nowrap">
 					<img src={EditBtn} alt="edit" />
 					<span className="p-1" />
 					<img src={DeleteBtn} alt="delete" />

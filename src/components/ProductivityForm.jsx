@@ -65,6 +65,7 @@ function ProductivityForm({ addPriority }) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		let id = uuidv4();
+		let date = new Date().toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' });
 
 		if (text.trim().length > 10) {
 			const newPriorityLog = {
@@ -72,7 +73,8 @@ function ProductivityForm({ addPriority }) {
 				hours,
 				minutes,
 				rating,
-				id
+				id,
+				date
 			};
 
 			// console.log(newPriorityLog);
