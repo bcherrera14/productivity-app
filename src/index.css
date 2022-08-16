@@ -77,8 +77,12 @@ label.btn {
 	border-bottom-left-radius: 17px;
 	padding: 0.8rem;
 	color: #fff;
-	min-width: 80px;
+	min-width: 90px;
 	font-weight: 600;
+}
+
+.daily-stat img {
+	max-width: 25px;
 }
 
 .card-btns {

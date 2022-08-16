@@ -17,7 +17,7 @@ function LogCard({ item }) {
 					<p className="m-0 text-nowrap">
 						<img src={Brain} alt="head" /> : {item.rating}
 					</p>
-					<p className="m-0">
+					<p className="m-0 text-nowrap">
 						<img src={Bed} alt="head" /> : {sleepTime}
 					</p>
 				</div>

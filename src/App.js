@@ -10,14 +10,15 @@ function App() {
 
 	const addPriority = (item) => {
 		setLogs([ item, ...logs ]);
+		localStorage.setItem('logData', JSON.stringify([ item, ...logs ]));
 	};
 
-	useEffect(
-		() => {
-			console.log(logs);
-		},
-		[ logs ]
-	);
+	useEffect(() => {
+		let storedLogs = localStorage.getItem('logData');
+		if (storedLogs != null) {
+			setLogs(JSON.parse(storedLogs));
+		}
+	}, []);
 
 	return (
 		<div>
