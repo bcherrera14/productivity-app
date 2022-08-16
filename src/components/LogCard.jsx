@@ -6,7 +6,7 @@ import Bed from './assets/bed-solid.svg';
 import EditBtn from './assets/pen-circle.svg';
 import DeleteBtn from './assets/circle-xmark.svg';
 
-function LogCard({ item }) {
+function LogCard({ item, deletePriority }) {
 	let sleepTime = item.hours + item.minutes / 60;
 	sleepTime = sleepTime.toFixed(1).replace(/[.,]0$/, '');
 
@@ -28,7 +28,7 @@ function LogCard({ item }) {
 				<div className="card-btns align-self-start text-nowrap">
 					<img src={EditBtn} alt="edit" />
 					<span className="p-1" />
-					<img src={DeleteBtn} alt="delete" />
+					<img src={DeleteBtn} alt="delete" onClick={() => deletePriority(item.id)} />
 				</div>
 			</div>
 		</div>

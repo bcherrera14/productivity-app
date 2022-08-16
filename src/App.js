@@ -13,6 +13,12 @@ function App() {
 		localStorage.setItem('logData', JSON.stringify([ item, ...logs ]));
 	};
 
+	const deletePriority = (id) => {
+		const result = logs.filter((item) => item.id !== id);
+		setLogs(result);
+		localStorage.setItem('logData', JSON.stringify(result));
+	};
+
 	useEffect(() => {
 		let storedLogs = localStorage.getItem('logData');
 		if (storedLogs != null) {
@@ -26,7 +32,7 @@ function App() {
 			<div className="container d-flex flex-column align-items-center">
 				<ProductivityForm addPriority={addPriority} />
 				<Stats logs={logs} />
-				<LogList logList={logs} />
+				<LogList logList={logs} deletePriority={deletePriority} />
 			</div>
 		</div>
 	);
